@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./client/public/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" href="/android-chrome-512x512.png">
     <title>Muhammad Ahmad Barkat | Software Engineer</title>
 
     <!-- Meta Tags -->
@@ -170,6 +170,7 @@
 </head>
 
 <body class="font-sans selection:bg-primary/30">
+    <div id="root"></div>
     <!-- Spline 3D Robot -->
     <div id="spline-container">
         <spline-viewer url="https://prod.spline.design/dctDGMrtxOFq0NKf/scene.splinecode"></spline-viewer>
@@ -755,6 +756,7 @@
             });
         });
     </script>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>

@@ -6,11 +6,11 @@ hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 channel = "stable-24_05"
 
 [[ports]]
-localPort = 5500
+localPort = 6000
 externalPort = 80
 
 [env]
-PORT = "5500"
+PORT = "6000"
 
 [deployment]
 deploymentTarget = "static"
@@ -36,7 +36,7 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run dev:client"
-waitForPort = 5500
+waitForPort = 6000
 
 [agent]
 mockupState = "MOCKUP"

@@ -705,48 +705,51 @@
 
             // Form submission
             const hireForm = document.getElementById('hire-form');
-            hireForm.addEventListener('submit', function (e) {
-                e.preventDefault();
+            if (hireForm) {
+                hireForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-                const formData = new FormData(this);
-                const data = {
-                    service: selectedService,
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    projectType: formData.get('projectType'),
-                    budget: formData.get('budget'),
-                    description: formData.get('description'),
-                    timeline: formData.get('timeline')
-                };
+                    const formData = new FormData(this);
+                    const data = {
+                        service: typeof selectedService !== 'undefined' ? selectedService : 'Not specified',
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        projectType: formData.get('projectType'),
+                        budget: formData.get('budget'),
+                        description: formData.get('description'),
+                        timeline: formData.get('timeline')
+                    };
 
-                // Here you would normally send this to your backend
-                console.log('Hire Request Data:', data);
+                    // Here you would normally send this to your backend
+                    console.log('Hire Request Data:', data);
 
-                // Show success message
-                this.classList.add('hidden');
-                document.getElementById('success-message').classList.remove('hidden');
+                    // Show success message
+                    this.classList.add('hidden');
+                    const hireSuccessMessage = document.getElementById('success-message'); // Ensure correct success message is targeted
+                    if (hireSuccessMessage) hireSuccessMessage.classList.remove('hidden');
 
-                // Create mailto link with all information
-                const subject = encodeURIComponent(`Hire Request: ${data.projectType} - ${data.service}`);
-                const body = encodeURIComponent(
-                    `Name: ${data.name}\n` +
-                    `Email: ${data.email}\n` +
-                    `Service Type: ${data.service}\n` +
-                    `Project Type: ${data.projectType}\n` +
-                    `Budget: ${data.budget}\n` +
-                    `Timeline: ${data.timeline}\n\n` +
-                    `Description:\n${data.description}`
-                );
+                    // Create mailto link with all information
+                    const subject = encodeURIComponent(`Hire Request: ${data.projectType} - ${data.service}`);
+                    const body = encodeURIComponent(
+                        `Name: ${data.name}\n` +
+                        `Email: ${data.email}\n` +
+                        `Service Type: ${data.service}\n` +
+                        `Project Type: ${data.projectType}\n` +
+                        `Budget: ${data.budget}\n` +
+                        `Timeline: ${data.timeline}\n\n` +
+                        `Description:\n${data.description}`
+                    );
 
-                // Open email client
-                window.location.href = `mailto:raheeqahmad2@gmail.com?subject=${subject}&body=${body}`;
+                    // Open email client
+                    window.location.href = `mailto:raheeqahmad2@gmail.com?subject=${subject}&body=${body}`;
 
-                // Close modal after 3 seconds
-                setTimeout(() => {
-                    closeHireModal();
-                    hireForm.classList.remove('hidden');
-                }, 3000);
-            });
+                    // Close modal after 3 seconds
+                    setTimeout(() => {
+                        if (typeof closeHireModal === 'function') closeHireModal();
+                        hireForm.classList.remove('hidden');
+                    }, 3000);
+                });
+            }
 
             // Close modal on Escape key
             document.addEventListener('keydown', (e) => {

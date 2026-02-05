@@ -16,7 +16,7 @@
     <meta name="twitter:title" content="Muhammad Ahmad Barkat | Software Engineer" />
     <meta name="twitter:description"
         content="Professional portfolio of Muhammad Ahmad Barkat, a Software Engineer specializing JavaScript, Node.js, and modern web technologies." />
-
+    <link rel="shortcut icon" href="/android-chrome-512x512.png" type="image/x-icon">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -167,17 +167,39 @@
         }
     </style>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.39/build/spline-viewer.js"></script>
+    <style>
+        #logo {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            position: absolute !important;
+            pointer-events: none !important;
+        }
+    </style>
 </head>
 
 <body class="font-sans selection:bg-primary/30">
-    <div id="root"></div>
+    <style>
+        #logo {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            position: absolute !important;
+            pointer-events: none !important;
+        }
+    </style>
     <!-- Spline 3D Robot -->
     <div id="spline-container">
         <spline-viewer url="https://prod.spline.design/dctDGMrtxOFq0NKf/scene.splinecode"></spline-viewer>
     </div>
 
+    <!-- Loading Screen -->
     <div id="loading-screen">
-        <div class="text-4xl font-bold font-heading animate-pulse cursor-pointer"><a href="/">MAB</a></div>
+        <div class="text-4xl font-bold font-heading animate-pulse cursor-pointer"><a href="index.html">MAB</a></div>
     </div>
 
     <!-- Navbar -->
@@ -185,7 +207,7 @@
         <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="text-xl md:text-2xl font-bold font-heading tracking-tight cursor-pointer"><a
-                        href="/">MAB</a></span>
+                        href="index.html">MAB</a></span>
             </div>
 
             <div class="hidden md:flex items-center gap-8">
@@ -256,15 +278,15 @@
                                     d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
-                        <a href="https://ahmad-cv.vercel.app/" target="_blank"
+                        <button
                             class="px-8 py-3 border-2 border-primary/50 rounded-lg font-medium hover:border-primary hover:bg-primary/5 transition-all duration-300 flex items-center gap-2">
-                            View CV
+                            <a href="https://ahmad-cv.vercel.app/" target="_blank">View CV</a>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
-                        </a>
+                        </button>
                     </div>
 
                     <div class="flex gap-6 pt-8 text-muted-foreground">
@@ -288,7 +310,7 @@
                                     d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                                 </path>
                             </svg></a>
-                        <a href="mailto:raheeeqahmadkl@gmail.com"
+                        <a href="mailto:raheeeqahmadkl@gmail.com" onclick="window.location.href=this.href"
                             class="hover:text-primary transition-all hover:scale-125 cursor-pointer"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -423,8 +445,7 @@
                                             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
                                 </div>
-                                <a href="#about" target="_blank"
-                                    class="text-muted-foreground hover:text-primary"><svg
+                                <a href="#about" target="_blank" class="text-muted-foreground hover:text-primary"><svg
                                         xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path
@@ -432,13 +453,60 @@
                                     </svg></a>
                             </div>
                             <h3 class="text-2xl font-bold mb-4">Personal Portfolio</h3>
-                            <p class="text-muted-foreground mb-6">My personal Portfolio built with HTML, CSS,JavaScript, and Node.js.
+                            <p class="text-muted-foreground mb-6">My personal Portfolio built with HTML, CSS,JavaScript,
+                                and Node.js.
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-2 py-1 rounded border border-border text-xs">HTML</span>
                                 <span class="px-2 py-1 rounded border border-border text-xs">CSS</span>
                                 <span class="px-2 py-1 rounded border border-border text-xs">JavaScript</span>
                                 <span class="px-2 py-1 rounded border border-border text-xs">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 5 - Emphasized (Recent) -->
+                    <div
+                        class="glass rounded-2xl overflow-hidden group hover:scale-[1.04] transition-all duration-300 md:col-span-2 ring-1 ring-primary/20 shadow-lg">
+                        <div class="relative">
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white text-xs font-medium">Recent</span>
+                            </div>
+                            <div class="h-2 w-full bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500"></div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-3 rounded-lg bg-secondary text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <a href="https://raheeq-portfolio.vercel.app/" target="_blank"
+                                    class="text-muted-foreground hover:text-primary"
+                                    aria-label="Open Brother's Portfolio in new tab"><svg
+                                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg></a>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Brother's Portfolio <span
+                                    class="text-sm text-muted-foreground font-medium">— Recent</span></h3>
+                            <p class="text-muted-foreground mb-4">My most recent creation — a modern, responsive
+                                portfolio built with HTML, CSS, JavaScript, Node.js and other modern technologies.
+                                Focused on performance, accessibility, and clean design.</p>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 rounded border border-border text-xs">HTML</span>
+                                <span class="px-2 py-1 rounded border border-border text-xs">CSS</span>
+                                <span class="px-2 py-1 rounded border border-border text-xs">JavaScript</span>
+                                <span class="px-2 py-1 rounded border border-border text-xs">Node.js</span>
+                                <span class="px-2 py-1 rounded border border-border text-xs">Modern Stack</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-primary font-medium">Featured: modern stack, responsive
+                                    layout, performance optimizations</span>
                             </div>
                         </div>
                     </div>
@@ -549,13 +617,17 @@
                                 Message</button>
                         </form>
                         <div id="success-message" class="hidden text-center py-8">
-                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/20 mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <div
+                                class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/20 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
                             <p class="text-xl font-bold text-green-400">Message has been sent!</p>
-                            <p class="text-muted-foreground mt-2">Thank you for reaching out. I'll get back to you soon.</p>
+                            <p class="text-muted-foreground mt-2">Thank you for reaching out. I'll get back to you soon.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -665,7 +737,7 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
-                    
+
                     // Hide the form and show success message
                     contactForm.classList.add('hidden');
                     successMessage.classList.remove('hidden');
@@ -705,49 +777,48 @@
             // Form submission
             const hireForm = document.getElementById('hire-form');
             if (hireForm) {
-                hireForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+              hireForm.addEventListener('submit', function (e) {
+                  e.preventDefault();
 
-                    const formData = new FormData(this);
-                    const data = {
-                        service: typeof selectedService !== 'undefined' ? selectedService : 'Not specified',
-                        name: formData.get('name'),
-                        email: formData.get('email'),
-                        projectType: formData.get('projectType'),
-                        budget: formData.get('budget'),
-                        description: formData.get('description'),
-                        timeline: formData.get('timeline')
-                    };
+                  const formData = new FormData(this);
+                  const data = {
+                      service: selectedService,
+                      name: formData.get('name'),
+                      email: formData.get('email'),
+                      projectType: formData.get('projectType'),
+                      budget: formData.get('budget'),
+                      description: formData.get('description'),
+                      timeline: formData.get('timeline')
+                  };
 
-                    // Here you would normally send this to your backend
-                    console.log('Hire Request Data:', data);
+                  // Here you would normally send this to your backend
+                  console.log('Hire Request Data:', data);
 
-                    // Show success message
-                    this.classList.add('hidden');
-                    const hireSuccessMessage = document.getElementById('success-message'); // Ensure correct success message is targeted
-                    if (hireSuccessMessage) hireSuccessMessage.classList.remove('hidden');
+                  // Show success message
+                  this.classList.add('hidden');
+                  document.getElementById('success-message').classList.remove('hidden');
 
-                    // Create mailto link with all information
-                    const subject = encodeURIComponent(`Hire Request: ${data.projectType} - ${data.service}`);
-                    const body = encodeURIComponent(
-                        `Name: ${data.name}\n` +
-                        `Email: ${data.email}\n` +
-                        `Service Type: ${data.service}\n` +
-                        `Project Type: ${data.projectType}\n` +
-                        `Budget: ${data.budget}\n` +
-                        `Timeline: ${data.timeline}\n\n` +
-                        `Description:\n${data.description}`
-                    );
+                  // Create mailto link with all information
+                  const subject = encodeURIComponent(`Hire Request: ${data.projectType} - ${data.service}`);
+                  const body = encodeURIComponent(
+                      `Name: ${data.name}\n` +
+                      `Email: ${data.email}\n` +
+                      `Service Type: ${data.service}\n` +
+                      `Project Type: ${data.projectType}\n` +
+                      `Budget: ${data.budget}\n` +
+                      `Timeline: ${data.timeline}\n\n` +
+                      `Description:\n${data.description}`
+                  );
 
-                    // Open email client
-                    window.location.href = `mailto:raheeqahmad2@gmail.com?subject=${subject}&body=${body}`;
+                  // Open email client
+                  window.location.href = `mailto:raheeqahmad2@gmail.com?subject=${subject}&body=${body}`;
 
-                    // Close modal after 3 seconds
-                    setTimeout(() => {
-                        if (typeof closeHireModal === 'function') closeHireModal();
-                        hireForm.classList.remove('hidden');
-                    }, 3000);
-                });
+                  // Close modal after 3 seconds
+                  setTimeout(() => {
+                      closeHireModal();
+                      hireForm.classList.remove('hidden');
+                  }, 3000);
+              });
             }
 
             // Close modal on Escape key
@@ -757,7 +828,26 @@
                 }
             });
         });
+
+        // Add dummy functions to prevent errors if elements don't exist
+        function closeHireModal() {
+            // implementation if needed
+        }
+        let selectedService = '';
     </script>
+
+    <!-- WhatsApp Icon (Fixed) -->
+    <a href="https://wa.me/923314853634" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 hover:from-green-600 hover:to-emerald-600 group "
+        style="position: fixed; bottom: 40px; right: 15px; z-index: 9999;"
+        aria-label="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp"
+            viewBox="0 0 16 16">
+            <path
+                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+        </svg>
+    </a>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 </body>
 
